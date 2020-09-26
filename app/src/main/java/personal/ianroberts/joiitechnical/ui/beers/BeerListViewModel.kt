@@ -10,7 +10,7 @@ import io.reactivex.schedulers.Schedulers
 import personal.ianroberts.joiitechnical.modules.database.beer.BeerDTO
 import personal.ianroberts.joiitechnical.modules.database.beer.BeerRepo
 
-class MainViewModel @ViewModelInject constructor(
+class BeerListViewModel @ViewModelInject constructor(
     private val repo: BeerRepo
 ) : ViewModel() {
 
