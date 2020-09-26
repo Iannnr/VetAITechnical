@@ -1,4 +1,4 @@
-package personal.ianroberts.joiitechnical.modules.database
+package personal.ianroberts.joiitechnical.modules.database.beer
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

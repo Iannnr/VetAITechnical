@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.AdapterListUpdateCallback
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.AsyncListDiffer
 import personal.ianroberts.joiitechnical.databinding.RowBeerBinding
-import personal.ianroberts.joiitechnical.modules.database.BeerDTO
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerDTO
 import personal.ianroberts.joiitechnical.ui.main.BaseListAdapter
 import personal.ianroberts.joiitechnical.ui.main.BaseViewHolder
 

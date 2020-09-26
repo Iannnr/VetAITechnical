@@ -1,4 +1,4 @@
-package personal.ianroberts.joiitechnical.modules.database
+package personal.ianroberts.joiitechnical.modules.database.beer
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

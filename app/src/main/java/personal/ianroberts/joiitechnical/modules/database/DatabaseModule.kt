@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerDatabase
 
 @Module
 @InstallIn(ApplicationComponent::class)

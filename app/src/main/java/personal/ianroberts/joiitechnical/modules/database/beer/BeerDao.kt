@@ -1,11 +1,11 @@
-package personal.ianroberts.joiitechnical.modules.database
+package personal.ianroberts.joiitechnical.modules.database.beer
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import io.reactivex.Flowable
 import io.reactivex.Maybe
-import io.reactivex.Single
+import personal.ianroberts.joiitechnical.modules.database.BaseDao
 
 @Dao
 interface BeerDao: BaseDao<BeerDB> {

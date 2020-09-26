@@ -1,4 +1,4 @@
-package personal.ianroberts.joiitechnical.modules.database
+package personal.ianroberts.joiitechnical.modules.database.beer
 
 import io.reactivex.Flowable
 import io.reactivex.Maybe
