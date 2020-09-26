@@ -20,7 +20,7 @@ class BeerListFragment : BaseFragment<BeerListFragmentBinding>() {
         fun newInstance() = BeerListFragment()
     }
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: BeerListViewModel by viewModels()
     private val adapter = BeerListAdapter(onClickListener = {
         (activity as? FragmentManager)?.showFragment(BeerViewFragment.newInstance(it))
     }, onFavouriteClick = { beer, checked ->
