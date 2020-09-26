@@ -49,5 +49,5 @@ I'd say I did spend a bit more than 8 hours on this, especially with comments, m
 
 # Screenshots 
 
-[screenshot]: https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141369.png "Horizontal List"
+https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141369.png "Horizontal List"
 
