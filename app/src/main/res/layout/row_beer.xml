@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="item"
+            type="personal.ianroberts.joiitechnical.modules.database.BeerDTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/favourite_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:minWidth="36dp"
+            android:minHeight="36dp"
+            android:checked="@{item.favourited}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@color/design_default_color_error" />
+
+        <TextView
+            android:id="@+id/beer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{item.name}"
+            app:layout_constraintBottom_toBottomOf="@id/favourite_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/favourite_icon"
+            app:layout_constraintTop_toTopOf="@id/favourite_icon"
+            tools:text="Very Very Very Very Very Very Very Very Very Very Very Long Beer Name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
