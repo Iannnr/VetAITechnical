@@ -49,6 +49,10 @@ class BeerRepo @Inject constructor(private val beerDao: BeerDao, private val bee
             }
     }
 
+    /*
+        This is what I like about RxJava, the ability to chain and concatenate flows
+        This checks the DB and then the API, so that it will always keep a reference to at least one request
+     */
     fun loadData(): Flowable<List<BeerDTO>> {
         val dbObservable = getDbBeers()
         val apiObservable = getApiBeers()
@@ -61,10 +65,37 @@ class BeerRepo @Inject constructor(private val beerDao: BeerDao, private val bee
                     })
         }
 
+        //Flowable is the RxJava equivalent to LiveData, so we get to listen to DB updates
         return beerDao.getAllBeersFlowable()
             .subscribeOn(Schedulers.io())
             .map {
                 it.map { BeerDTO(it) }
+            }
+    }
+
+    fun filterBeers(favourited: Boolean): Flowable<List<BeerDTO>> {
+        return beerDao.getAllBeersFlowable()
+            .subscribeOn(Schedulers.io())
+            .map {
+                it.map { BeerDTO(it) }
+            }
+            .map {
+                if (favourited) it.filter { it.favourited } else it
+            }
+    }
+
+    //set the favourite
+    fun favouriteBeer(beer: BeerDTO, favourited: Boolean): Single<Int> {
+        return beer.toDB().copy(favourited = favourited).run {
+            beerDao.update(this)
+        }
+    }
+
+    fun listenToBeerUpdates(id: String): Maybe<BeerDTO> {
+        return beerDao.getBeer(id)
+            .subscribeOn(Schedulers.io())
+            .map {
+                BeerDTO(it)
             }
     }
 

@@ -1,4 +1,4 @@
-package personal.ianroberts.joiitechnical.ui.main
+package personal.ianroberts.joiitechnical.ui.beers
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.AsyncListDiffer
 import personal.ianroberts.joiitechnical.databinding.RowBeerBinding
 import personal.ianroberts.joiitechnical.modules.database.BeerDTO
+import personal.ianroberts.joiitechnical.ui.main.BaseListAdapter
+import personal.ianroberts.joiitechnical.ui.main.BaseViewHolder
 
-class BeerListAdapter : BaseListAdapter<BeerDTO>() {
+class BeerListAdapter(private val onClickListener: (BeerDTO) -> Unit, private val onFavouriteClick: (BeerDTO, Boolean) -> Unit) : BaseListAdapter<BeerDTO>() {
 
     override var differ = AsyncListDiffer(
         AdapterListUpdateCallback(this),
@@ -30,7 +32,7 @@ class BeerListAdapter : BaseListAdapter<BeerDTO>() {
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<BeerDTO>, position: Int) {
-        differ.currentList[position]?.let { holder.onBind(it) }
+        differ.currentList[position]?.let { holder.onBind(it, onClickListener, onFavouriteClick) }
     }
 
     override fun getItemId(position: Int): Long {

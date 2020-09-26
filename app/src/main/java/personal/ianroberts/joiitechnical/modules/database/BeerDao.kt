@@ -10,6 +10,9 @@ import io.reactivex.Single
 @Dao
 interface BeerDao: BaseDao<BeerDB> {
 
+    @Query("SELECT * FROM beer WHERE id = :id LIMIT 1 ")
+    fun getBeer(id: String): Maybe<BeerDB>
+
     @Query("SELECT * FROM beer")
     fun getAllBeersRx(): Maybe<List<BeerDB>>
 

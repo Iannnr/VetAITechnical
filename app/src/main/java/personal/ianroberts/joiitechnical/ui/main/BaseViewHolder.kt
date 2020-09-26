@@ -6,5 +6,5 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class BaseViewHolder<DATA>(binding: ViewDataBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    abstract fun onBind(item: DATA)
+    abstract fun onBind(item: DATA, onClickListener: (DATA) -> Unit, onFavouriteClick: (DATA, Boolean) -> Unit)
 }

@@ -1,10 +1,12 @@
-package personal.ianroberts.joiitechnical.ui.main
+package personal.ianroberts.joiitechnical.ui.beers
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import personal.ianroberts.joiitechnical.modules.database.BeerDTO
 import personal.ianroberts.joiitechnical.modules.database.BeerRepo
 
@@ -36,5 +38,25 @@ class MainViewModel @ViewModelInject constructor(
         super.onCleared()
 
         disposables.onEach { it.dispose() }.clear()
+    }
+
+    fun favourite(beer: BeerDTO, favourited: Boolean, onComplete: () -> Unit) {
+        disposables.add(
+            repo.favouriteBeer(beer, favourited)
+                .subscribeOn(Schedulers.io()) //this ensures the db calls happens on an IO thread
+                .observeOn(AndroidSchedulers.mainThread()) //this ensures the subscribe and onComplete happens on the main thread
+                .subscribe({ onComplete() }, {})
+        )
+    }
+
+    fun filterBeers(favourited: Boolean) {
+        disposables.add(
+            repo.filterBeers(favourited)
+                .subscribe({
+                    _beers.postValue(it)
+                }, {
+                    it.printStackTrace()
+                })
+        )
     }
 }
