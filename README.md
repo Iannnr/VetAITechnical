@@ -49,5 +49,5 @@ I'd say I did spend a bit more than 8 hours on this, especially with comments, m
 
 # Screenshots 
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[screenshot]: https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141369.png "Horizontal List"
 
