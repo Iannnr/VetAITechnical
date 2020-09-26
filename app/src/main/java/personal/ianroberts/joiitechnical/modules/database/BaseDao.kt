@@ -7,7 +7,7 @@ import io.reactivex.Single
 @Dao
 interface BaseDao<T> {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(vararg entity: T): Completable
 
     @Update

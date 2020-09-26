@@ -1,4 +1,4 @@
-package personal.ianroberts.joiitechnical.ui.main
+package personal.ianroberts.joiitechnical.ui.beers
 
 import androidx.recyclerview.widget.DiffUtil
 import personal.ianroberts.joiitechnical.modules.database.BeerDTO
