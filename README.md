@@ -45,7 +45,9 @@ Along with built-in support for suspend functions with both Room and Retrofit.
 * the website [JSON to Kotlin Data Class](https://www.json2kotlin.com/) was used to create the classes for the retrofit serialization, as a time-saving aspect
 
 #
-I'd I did spend a bit more than 8 hours on this, especially with comments, markdown, setup requirements, double checking it works with other Android Studio versions, screenshots etc.
+I'd say I did spend a bit more than 8 hours on this, especially with comments, markdown, setup requirements, double checking it works with other Android Studio versions, screenshots etc.
 
 # Screenshots 
-https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141369.png
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
