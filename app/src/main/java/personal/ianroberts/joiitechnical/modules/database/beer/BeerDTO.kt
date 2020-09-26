@@ -1,9 +1,15 @@
-package personal.ianroberts.joiitechnical.modules.database
+package personal.ianroberts.joiitechnical.modules.database.beer
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-import personal.ianroberts.joiitechnical.modules.database.beer.Data
+import personal.ianroberts.joiitechnical.modules.network.beer.Data
 
+/*
+    Part of the Repository pattern, the App-side should only ever use & care about the DTO
+    But this class is used for mapping DTO > DB and API > DTO > DB
+    This allows for less changes when the database or API schema changes
+    Additionally, Room can create different objects based on class structure, so can help with setting up a DTO from DB
+ */
 @Parcelize
 data class BeerDTO(val id: String, val name: String, val description: String, val imageUrl: String, val favourited: Boolean): Parcelable {
 

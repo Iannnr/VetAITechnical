@@ -1,7 +1,7 @@
 package personal.ianroberts.joiitechnical.ui.beers
 
 import androidx.recyclerview.widget.DiffUtil
-import personal.ianroberts.joiitechnical.modules.database.BeerDTO
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerDTO
 
 class BeerItemDiff : DiffUtil.ItemCallback<BeerDTO>() {
 

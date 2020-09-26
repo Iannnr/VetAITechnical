@@ -1,4 +1,4 @@
-package personal.ianroberts.joiitechnical.modules.database
+package personal.ianroberts.joiitechnical.modules.database.beer
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

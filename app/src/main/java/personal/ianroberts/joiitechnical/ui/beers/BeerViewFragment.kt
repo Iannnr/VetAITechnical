@@ -9,8 +9,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.android.schedulers.AndroidSchedulers
 import personal.ianroberts.joiitechnical.R
 import personal.ianroberts.joiitechnical.databinding.BeerViewFragmentBinding
-import personal.ianroberts.joiitechnical.modules.database.BeerDTO
-import personal.ianroberts.joiitechnical.modules.database.BeerRepo
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerDTO
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerRepo
 import personal.ianroberts.joiitechnical.ui.main.BaseFragment
 import personal.ianroberts.joiitechnical.ui.main.FragmentManager
 import javax.inject.Inject

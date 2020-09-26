@@ -8,13 +8,24 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
-package personal.ianroberts.joiitechnical.modules.database.beer
+package personal.ianroberts.joiitechnical.modules.network.beer
 
-data class Labels(
-    val icon: String,
-    val medium: String,
-    val large: String,
-    val contentAwareIcon: String,
-    val contentAwareMedium: String,
-    val contentAwareLarge: String
+data class Style(
+    val id: Int,
+    val categoryId: Int,
+    val category: Category,
+    val name: String,
+    val shortName: String,
+    val description: String,
+    val ibuMin: Double,
+    val ibuMax: Double,
+    val abvMin: Double,
+    val abvMax: Double,
+    val srmMin: Double,
+    val srmMax: Double,
+    val ogMin: Double,
+    val fgMin: Double,
+    val fgMax: Double,
+    val createDate: String,
+    val updateDate: String
 )

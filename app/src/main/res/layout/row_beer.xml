@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="personal.ianroberts.joiitechnical.modules.database.BeerDTO" />
+            type="personal.ianroberts.joiitechnical.modules.database.beer.BeerDTO" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import io.reactivex.Maybe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import personal.ianroberts.joiitechnical.modules.database.BeerDTO
-import personal.ianroberts.joiitechnical.modules.database.BeerRepo
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerDTO
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerRepo
 
 class BeerViewModel(val beer: BeerDTO, private val beerRepo: BeerRepo) : ViewModel() {
 

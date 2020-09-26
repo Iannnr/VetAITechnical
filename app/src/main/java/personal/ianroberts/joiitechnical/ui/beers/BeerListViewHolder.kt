@@ -2,7 +2,7 @@ package personal.ianroberts.joiitechnical.ui.beers
 
 import androidx.appcompat.widget.AppCompatCheckBox
 import personal.ianroberts.joiitechnical.databinding.RowBeerBinding
-import personal.ianroberts.joiitechnical.modules.database.BeerDTO
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerDTO
 import personal.ianroberts.joiitechnical.ui.main.BaseViewHolder
 
 class BeerListViewHolder(private val binding: RowBeerBinding) : BaseViewHolder<BeerDTO>(binding) {

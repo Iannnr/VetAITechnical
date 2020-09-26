@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import personal.ianroberts.joiitechnical.modules.database.BeerDTO
-import personal.ianroberts.joiitechnical.modules.database.BeerRepo
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerDTO
+import personal.ianroberts.joiitechnical.modules.database.beer.BeerRepo
 
 class MainViewModel @ViewModelInject constructor(
     private val repo: BeerRepo

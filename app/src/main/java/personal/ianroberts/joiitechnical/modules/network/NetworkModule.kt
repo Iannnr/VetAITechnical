@@ -53,18 +53,19 @@ object NetworkModule {
                 .build()
     }
 
-    //using the basic gson factory, but can
+    //using the gson in the dagger graph to create a base gson converter factory, but Moshi factory might be better for more control
     @Provides
     @Singleton
     fun provideGsonConverterFactory(gson: Gson) = GsonConverterFactory.create(gson)
 
     //allows for the use of Single/Maybe/Observable to be used with a retrofit call, or built-in support for coroutines and suspend functions
     //also allows for an async creation, or one with a specific scheduler (if we want our API calls to only happen on a specific thread/pool
+    //note: RxJava != async, so thread control is an important part of Rx Flow
     @Provides
     @Singleton
     fun provideRxCallFactory() = RxJava2CallAdapterFactory.create()
 
-    //build up a retrofit service
+    //build up a retrofit service using objects in the dagger graph
     @Provides
     @Singleton
     fun provideRetrofit(
