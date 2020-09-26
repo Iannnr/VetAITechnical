@@ -39,12 +39,14 @@ class BeerRepo @Inject constructor(private val beerDao: BeerDao, private val bee
                 it.body()?.data?.map { BeerDTO(it) }.orEmpty()
             }
             .doOnSuccess {
+                //insert the data into the database
                 beerDao.insert(*it.map { it.toDB() }.toTypedArray())
                     .subscribe({}, {
                         it.printStackTrace()
                     })
             }
             .doOnError {
+                //expected to use Timer/Firebase exception logging here
                 it.printStackTrace()
             }
     }
@@ -61,6 +63,7 @@ class BeerRepo @Inject constructor(private val beerDao: BeerDao, private val bee
             dataProviderDisposable =
                 Observable.concat(dbObservable.toObservable(), apiObservable.toObservable())
                     .subscribe({}, {
+                        //expected to use Timer/Firebase exception logging here
                         it.printStackTrace()
                     })
         }
@@ -73,6 +76,7 @@ class BeerRepo @Inject constructor(private val beerDao: BeerDao, private val bee
             }
     }
 
+    //get the current beers and map them to filter if the beer is favourited
     fun filterBeers(favourited: Boolean): Flowable<List<BeerDTO>> {
         return beerDao.getAllBeersFlowable()
             .subscribeOn(Schedulers.io())
@@ -84,13 +88,17 @@ class BeerRepo @Inject constructor(private val beerDao: BeerDao, private val bee
             }
     }
 
-    //set the favourite
+    //takes a beer DTO, creates a DB object from it, sets it as a favourite and updates the db model
     fun favouriteBeer(beer: BeerDTO, favourited: Boolean): Single<Int> {
         return beer.toDB().copy(favourited = favourited).run {
             beerDao.update(this)
         }
     }
 
+    /*
+        RxJava doesn't support null data sets, so a Maybe is the Rx Type to support as such.
+        If the object doesn't exist in the DB, the Maybe does not complete, and does not update the UI
+     */
     fun listenToBeerUpdates(id: String): Maybe<BeerDTO> {
         return beerDao.getBeer(id)
             .subscribeOn(Schedulers.io())
@@ -99,5 +107,6 @@ class BeerRepo @Inject constructor(private val beerDao: BeerDao, private val bee
             }
     }
 
+    //because the API task is a longer-running task than the DB, the disposable isn't disposed until the API call is complete
     private fun isNetworkInProgress() = !(dataProviderDisposable?.isDisposed ?: true)
 }

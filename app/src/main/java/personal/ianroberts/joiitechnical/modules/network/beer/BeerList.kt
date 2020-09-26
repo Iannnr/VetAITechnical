@@ -8,10 +8,12 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
-package personal.ianroberts.joiitechnical.modules.database.beer
+package personal.ianroberts.joiitechnical.modules.network.beer
 
-data class Glass(
-    val id: Int,
-    val name: String,
-    val createDate: String
+data class BeerList(
+    val currentPage: Int,
+    val numberOfPages: Int,
+    val totalResults: Int,
+    val data: List<Data>,
+    val status: String
 )
