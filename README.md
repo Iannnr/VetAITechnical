@@ -51,9 +51,9 @@ I'd say I did spend a bit more than 8 hours on this, especially with comments, m
 
 ![Horizontal 1 Favourite](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141369.png "")
 ![Vertical 1 Favourite](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141382.png "")
-![Vertical 2 Favourites](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141393.png, "")
-![Vertical Filtered Favourites](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141396.png, "")
-![Beer View 1](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141401.png, "")
-![Beer View 2](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141412.png, "")
-![Beer View Scrolled](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141420.png, "")
+![Vertical 2 Favourites](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141393.png "")
+![Vertical Filtered Favourites](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141396.png "")
+![Beer View 1](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141401.png "")
+![Beer View 2](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141412.png "")
+![Beer View Scrolled](https://github.com/Iannnr/VetAITechnical/blob/master/screenshots/Screenshot_1601141420.png "")
 
