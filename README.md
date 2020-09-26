@@ -44,4 +44,5 @@ Along with built-in support for suspend functions with both Room and Retrofit.
 * The individual beer view doesn't use injected objects from the dagger graph, as it needs a run-time object, this can be injected using [Assisted Inject](https://github.com/square/AssistedInject) , but this cannot be used in conjunction with `@ViewModelInject` or other provided objects, so it gets messy, with specific objects requiring to provide them...
 * the website [JSON to Kotlin Data Class](https://www.json2kotlin.com/) was used to create the classes for the retrofit serialization, as a time-saving aspect
 
-
+#
+I'd I did spend a bit more than 8 hours on this, especially with comments, markdown, setup requirements, double checking it works with other Android Studio versions, screenshots etc.
