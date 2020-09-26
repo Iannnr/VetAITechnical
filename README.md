@@ -38,6 +38,7 @@ debug {
 # Justification of choices
 
 * I chose RxJava for its ability to chain flows together and switching/mapping functions, I understand this can also be done with Coroutines with a list of deferred jobs and `awaitAll()` and suspend functions too. 
+            * Disposables is also a good way to cancel an execution of a job, similar to a scope of a coroutine job, which can be cleared on the VM / View lifecycle end
 Along with built-in support for suspend functions with both Room and Retrofit.
 * I'd prefer to use the Android Paging Library for the API call & RecyclerView Adapter, but the set up time is significantly longer than just a RecyclerView, Adapter & an async diff config
 * This app implements a mixture of Databinding, I feel like this is absolutely fine to use for the ViewHolder & the chosen beer information view, as it saves on a reasonable amount of boilerplate code, but understand that it's not the fastest and debugging it can be difficult
