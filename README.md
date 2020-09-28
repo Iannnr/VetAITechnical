@@ -41,11 +41,12 @@ debug {
 * Disposables is also a good way to cancel an execution of a job, similar to a scope of a coroutine job, which can be cleared on the VM / View lifecycle end
 * I'd prefer to use the Android Paging Library for the API call & RecyclerView Adapter, but the set up time is significantly longer than just a RecyclerView, Adapter & an async diff config
 * This app implements a mixture of Databinding, I feel like this is absolutely fine to use for the ViewHolder & the chosen beer information view, as it saves on a reasonable amount of boilerplate code, but understand that it's not the fastest and debugging it can be difficult
+* I chose Hilt over Dagger here because of its smaller start up overhead and reduction of code required for injections (especially for ViewModels) and graph creation. I understand this library isn't entirely production ready, but offered enough of the basics of requiring providers and modules for Dagger, the main thing "missing" from it is the Components, as these are already provided by Hilt Interfaces.
 * The individual beer view doesn't use injected objects from the dagger graph, as it needs a run-time object, this can be injected using [Assisted Inject](https://github.com/square/AssistedInject) , but this cannot be used in conjunction with `@ViewModelInject` or other provided objects, so it gets messy, with specific objects requiring to provide them...
 * the website [JSON to Kotlin Data Class](https://www.json2kotlin.com/) was used to create the classes for the retrofit serialization, as a time-saving aspect
 
 #
-I'd say I did spend a bit more than 8 hours on this, especially with comments, markdown, setup requirements, double checking it works with other Android Studio versions, screenshots etc.
+I'd say I did spend a bit more than 8 hours on this, especially with comments, markdown, setup requirements, double checking it works with other Android Studio versions, screenshots etc, but it was a fun task and could have quick happily spent more time on it.
 
 # Screenshots 
 
