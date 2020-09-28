@@ -10,8 +10,8 @@ may need to be changed to
 
 `classpath "com.android.tools.build:gradle:4.0.0"` 
 
-The Sandbox keys have been omitted from the app build.gradle for security reasons.
-To ensure the app builds successfully, the following code needs to be inserted on line 34: (with the keys inserted from the webpage provided)
+The Sandbox keys have been omitted from the app [build.gradle](https://github.com/Iannnr/VetAITechnical/blob/master/app/build.gradle#L34) for security reasons.
+To ensure the app builds successfully, the following code needs to be inserted on [line 34](https://github.com/Iannnr/VetAITechnical/blob/master/app/build.gradle#L34) : (with the keys inserted from the webpage provided)
 ```groovy
 debug {
             buildConfigField "String", BASE_URL, "\"https://sandbox-api.brewerydb.com/v2/\""
